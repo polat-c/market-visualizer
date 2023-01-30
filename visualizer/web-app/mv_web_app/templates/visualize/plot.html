@@ -1,0 +1,35 @@
+{% extends 'visualize/base.html' %}
+
+{% block content %}
+
+<hr>
+<!-- <form action="", method="POST">
+    {% csrf_token %}
+    <input type="text" name="ticker" id="ticker" placeholder="Ticker Symbol">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <hr>
+    <input type="text" name="start_t" id="start_t" placeholder="Starting Date (DD/MM/YYYY)">
+    <input type="text" name="end_t" id="end_t" placeholder="End Date (DD/MM/YYYY)">
+    <hr>
+    <input type="text" name="interval" id="interval" placeholder="Tick Intervals">
+    <hr>
+    <input type="submit", value="Visualize">
+</form> -->
+<form action="", method="POST">
+    {% csrf_token %}
+    <input type="text" name="ticker" id="ticker" placeholder="Ticker Symbol">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <hr>
+    <input type="date" name="start_t" id="start_t" placeholder="Starting Date (MM/DD/YYYY)">
+    <input type="date" name="end_t" id="end_t" placeholder="End Date (MM/DD/YYYY)">
+    <hr>
+    <input type="text" name="interval" id="interval" placeholder="Tick Intervals">
+    <hr>
+    <input type="submit", value="Visualize">
+</form>
+{% if figure %}
+    <b>Plot</b>
+    <img src="data:image/png;base64, {{figure|safe}}" alt="" id="img">
+{% endif %}
+
+{% endblock content %}

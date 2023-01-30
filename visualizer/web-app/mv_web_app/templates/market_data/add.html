@@ -1,0 +1,6 @@
+<form action="/market_data/add", method="POST">
+    {% csrf_token %}
+    <input type="text" name="ticker" id="ticker" placeholder="Ticker Symbol">
+    <input type="text" name="name" id="name" placeholder="Name">
+    <input type="submit", value="Add">
+</form>
